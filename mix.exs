@@ -37,10 +37,9 @@ defmodule AlertasEc.MixProject do
       {:absinthe_ecto, "~> 0.1"},
       {:absinthe_plug, "~> 1.4"},
       {:ecto_sql, "~> 3.2"},
-      {:joken, "~> 2.2"},
+      {:jason, "~> 1.1"},
       {:plug_cowboy, "~> 2.1"},
       {:postgrex, "~> 0.15"},
-      {:tentacat, "~> 1.0"},
 
       # Test dependencies
       {:credo, "~> 1.1.5", only: [:dev, :test], runtime: false},
