@@ -6,6 +6,7 @@ defmodule AlertasEc.Models.Update do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias AlertasEc.{Repo}
   alias AlertasEc.Models.{Alert, Update}
 
   schema("updates") do
@@ -16,6 +17,11 @@ defmodule AlertasEc.Models.Update do
     belongs_to(:alert, Alert)
 
     timestamps()
+  end
+
+  def list_updates do
+    Update
+    |> Repo.all()
   end
 
   def changeset(%Update{} = update, attrs) do
