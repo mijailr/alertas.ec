@@ -10,6 +10,7 @@ jobs:
   test:
     env:
       POSTGRES_PASSWORD: postgres
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     services:
       db:
@@ -46,7 +47,7 @@ jobs:
     - name: Install Dependencies
       run: mix deps.get
     - name: Run Tests
-      run: mix test
+      run: mix coveralls.github
     - name: Build release
       env:
         MIX_ENV: prod
