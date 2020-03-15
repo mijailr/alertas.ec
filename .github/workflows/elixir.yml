@@ -14,6 +14,8 @@ jobs:
         image: postgres:alpine
         ports:
           - 5432:5432
+    env:
+      POSTGRES_PASSWORD: postgres
     steps:
     - name: Checkout repository
       uses: actions/checkout@v1
