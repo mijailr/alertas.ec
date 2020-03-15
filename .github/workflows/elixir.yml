@@ -32,6 +32,12 @@ jobs:
         path: deps/
         key: ${{ runner.os }}-deps-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-deps-
+    - name: Get deps build
+      uses: actions/cache@v1
+      with:
+        path: _build/
+        key: ${{ runner.os }}-build-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-build-
     - name: Setup elixir
       uses: actions/setup-elixir@v1
       with:
