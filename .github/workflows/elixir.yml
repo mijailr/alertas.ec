@@ -42,8 +42,6 @@ jobs:
     - name: Run Tests
       run: mix test
     - name: Build release
-      env:
-        MIX_ENV: prod
       run: mix release
     - uses: actions/upload-artifact@v1
       with:
