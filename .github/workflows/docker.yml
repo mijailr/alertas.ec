@@ -1,12 +1,14 @@
 name: Docker
 
 on:
-  push:
-    branches: [ master ]
+  release:
+    types: [published]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      IMAGE: docker.pkg.github.com/mijailr/alertas.ec/alertas_ec
     steps:
     - name: Checkout repository
       uses: actions/checkout@v1
@@ -16,7 +18,7 @@ jobs:
       run: |
         docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
     - name: Build docker image
-      run: docker build . -t docker.pkg.github.com/mijailr/alertas.ec/alertas_ec:latest
+      run: docker build . -t $IMAGE:latest -t $IMAGE:$GITHUB_REF
     - name: Push docker image
-      run: docker push docker.pkg.github.com/mijailr/alertas.ec/alertas_ec:latest
+      run: docker push $IMAGE:latest $IMAGE:$GITHUB_REF
 
