@@ -11,8 +11,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v1
     - name: Login docker registry
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo {{secrets.GITHUB_TOKEN}} | docker login -u $GITHUB_ACTOR --password-stdin
+        docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
     - name: Build docker image
       run: docker build . -t docker.pkg.github.com/mijailr/alertas.ec/alertas_ec:latest
     - name: Push docker image
