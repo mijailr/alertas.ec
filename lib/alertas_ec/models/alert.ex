@@ -1,4 +1,8 @@
 defmodule AlertasEc.Models.Alert do
+  @moduledoc """
+  Alert model
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -21,15 +25,15 @@ defmodule AlertasEc.Models.Alert do
     |> Repo.all()
   end
 
-  # def find(id) when is_binary(id) do
-  #   id
-  #   |> String.to_integer()
-  #   |> find()
-  # end
-
   def find(id) do
     Alert
     |> Repo.get(id)
+  end
+
+  def create(%{} = attrs) do
+    %Alert{}
+    |> changeset(attrs)
+    |> Repo.insert()
   end
 
   def changeset(%Alert{} = alert, attrs) do
