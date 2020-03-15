@@ -18,7 +18,7 @@ jobs:
       run: |
         docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
     - name: Build docker image
-      run: docker build . -t $IMAGE:latest -t $IMAGE:$GITHUB_REF
+      run: docker build . -t $IMAGE:latest -t $IMAGE:${GITHUB_REF:10}
     - name: Push docker image
       run: docker push $IMAGE:latest $IMAGE:$GITHUB_REF
 
