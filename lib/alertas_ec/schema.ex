@@ -16,7 +16,13 @@ defmodule AlertasEc.Schema do
 
     @desc "Get all updates"
     field :updates, list_of(:update) do
-      resolve(&Resolvers.Update.list_updates/3)
+      resolve(&Resolvers.Update.list/3)
+    end
+
+    @desc "Find update by id"
+    field :update, :update do
+      arg(:id, non_null(:id))
+      resolve(&Resolvers.Update.find/3)
     end
   end
 end

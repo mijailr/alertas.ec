@@ -19,7 +19,12 @@ defmodule AlertasEc.Models.Update do
     timestamps()
   end
 
-  def list_updates do
+  def find(id) do
+    Update
+    |> Repo.get(id)
+  end
+
+  def list do
     Update
     |> Repo.all()
   end
