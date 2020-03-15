@@ -2,6 +2,7 @@ defmodule AlertasEc.Models.Alert do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias AlertasEc.Repo
   alias AlertasEc.Models.{Alert, Update}
 
   schema("alerts") do
@@ -13,6 +14,22 @@ defmodule AlertasEc.Models.Alert do
     has_many(:updates, Update)
 
     timestamps()
+  end
+
+  def list do
+    Alert
+    |> Repo.all()
+  end
+
+  # def find(id) when is_binary(id) do
+  #   id
+  #   |> String.to_integer()
+  #   |> find()
+  # end
+
+  def find(id) do
+    Alert
+    |> Repo.get(id)
   end
 
   def changeset(%Alert{} = alert, attrs) do
