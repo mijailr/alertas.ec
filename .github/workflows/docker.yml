@@ -1,0 +1,21 @@
+name: Docker
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs_on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+    - name: Download alertas.ec release
+    - name: Login docker registry
+      run: |
+        echo {{secrets.GITHUB_TOKEN}} | docker login -u $GITHUB_ACTOR --password-stdin
+    - name: Build docker image
+      run: docker build . -t docker.pkg.github.com/mijailr/alertas.ec/alertas_ec:latest
+    - name: Push docker image
+      run: docker push docker.pkg.github.com/mijailr/alertas.ec/alertas_ec:latest
+

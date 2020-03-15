@@ -48,12 +48,4 @@ jobs:
       run: mix deps.get
     - name: Run Tests
       run: mix coveralls.github
-    - name: Build release
-      env:
-        MIX_ENV: prod
-      run: mix release
-    - uses: actions/upload-artifact@v1
-      with:
-        name: alertas-ec-release
-        path: _build/prod/rel/production
 
