@@ -23,9 +23,11 @@ RUN \
   mix release --path /opt/built
 
 FROM alpine:latest
-ENV POSTGRES_URL=ecto://postgres:postgres@localhost/alertas_prod
+ENV DATABASE_URL=ecto://postgres:postgres@localhost/alertas_prod
 ENV MIX_ENV=prod
 ENV REPLACE_OS_VARS=true
+
+EXPOSE 3000
 
 RUN apk update && \
     apk add --no-cache \
