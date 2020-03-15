@@ -1,4 +1,8 @@
 defmodule AlertasEc.Server do
+  @moduledoc """
+  Server endpoints
+  """
+
   require Logger
   use Plug.Router
   use Plug.ErrorHandler
