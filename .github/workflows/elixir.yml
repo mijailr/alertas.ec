@@ -54,5 +54,5 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: alertas-ec-release
-        path: _build/dev/rel/production
+        path: _build/prod/rel/production
 
