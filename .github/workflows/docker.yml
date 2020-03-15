@@ -10,7 +10,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v1
-    - name: Download alertas.ec release
     - name: Login docker registry
       run: |
         echo {{secrets.GITHUB_TOKEN}} | docker login -u $GITHUB_ACTOR --password-stdin
