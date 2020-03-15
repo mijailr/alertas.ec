@@ -1,11 +1,18 @@
 defmodule AlertasEc.MixProject do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [
       app: :alertas_ec,
-      version: "0.1.0",
+      aliases: aliases(),
+      preferred_cli_env: preferred_cli_env(),
+      version: @version,
       elixir: "~> 1.10",
+      elixirc_paths: elixirc_paths(Mix.env()),
+      releases: releases(),
+      test_coverage: [tool: ExCoveralls],
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -14,7 +21,13 @@ defmodule AlertasEc.MixProject do
   def application do
     [
       mod: {AlertasEc, []},
-      extra_applications: [:logger]
+      extra_applications: [:ecto, :logger, :plug_cowboy]
+    ]
+  end
+
+  def aliases do
+    [
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 
@@ -38,6 +51,28 @@ defmodule AlertasEc.MixProject do
 
       # Docs dependencies
       {:ex_doc, "~> 0.21", only: :dev}
+    ]
+  end
+
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
+
+  defp preferred_cli_env do
+    [
+      coveralls: :test,
+      "coveralls.detail": :test,
+      "coveralls.github": :test,
+      "coveralls.html": :test,
+      docs: :dev
+    ]
+  end
+
+  defp releases do
+    [
+      production: [
+        include_executables_for: [:unix],
+        applications: [runtime_tools: :permanent]
+      ]
     ]
   end
 end
