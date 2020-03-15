@@ -8,5 +8,5 @@ build:
   docker:
     web: Dockerfile
   config:
-    MIX_ENV=prod
-    DATABASE_URL=$DATABASE_URL
+    MIX_ENV: prod
+    DATABASE_URL: $DATABASE_URL
