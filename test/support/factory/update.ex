@@ -4,7 +4,7 @@ defmodule AlertasEc.Factory.Update do
       def update_factory do
         %AlertasEc.Models.Update{
           title: Faker.Lorem.sentence(),
-          content: Faker.StarWars.quote(),
+          content: Faker.Lorem.sentence(),
           date: Faker.DateTime.backward(1),
           source: Faker.Internet.url(),
           alert: build(:alert)
