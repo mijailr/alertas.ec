@@ -24,6 +24,9 @@ defmodule AlertasEc do
       name: Comment.Supervisor
     ]
 
-    Supervisor.start_link(children, options)
+    start_link = Supervisor.start_link(children, options)
+    Ecto.Migrator.run(Repo, "priv/repo/migrations", :up, all: true)
+
+    start_link
   end
 end

@@ -36,7 +36,7 @@ defmodule AlertasEc.MixProject do
       {:absinthe, "~> 1.4"},
       {:absinthe_ecto, "~> 0.1"},
       {:absinthe_plug, "~> 1.4"},
-      {:ecto_sql, "~> 3.2"},
+      {:ecto_sql, "~> 3.3"},
       {:jason, "~> 1.1"},
       {:plug_cowboy, "~> 2.1"},
       {:postgrex, "~> 0.15"},
@@ -46,7 +46,6 @@ defmodule AlertasEc.MixProject do
       {:ex_machina, "~> 2.3", only: :test},
       {:excoveralls, "~> 0.12", only: [:dev, :test]},
       {:faker, "~> 0.13", only: :test},
-      {:exvcr, "~> 0.11", only: :test},
 
       # Docs dependencies
       {:ex_doc, "~> 0.21", only: :dev}
