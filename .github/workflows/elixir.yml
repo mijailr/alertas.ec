@@ -43,7 +43,7 @@ jobs:
       run: mix test
     - name: Build release
       env:
-        MIX_ENV=prod
+        MIX_ENV: prod
       run: mix release
     - uses: actions/upload-artifact@v1
       with:
