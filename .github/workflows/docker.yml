@@ -20,5 +20,7 @@ jobs:
     - name: Build docker image
       run: docker build . -t $IMAGE:latest -t $IMAGE:${GITHUB_REF:10}
     - name: Push docker image
-      run: docker push $IMAGE:latest $IMAGE:$GITHUB_REF
+      run: |
+        docker push $IMAGE:latest
+        docker push $IMAGE:${GITHUB_REF:10}
 
