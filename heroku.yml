@@ -4,9 +4,9 @@ setup:
     - plan: heroku-postgres
       as: DATABASE
 
-  build:
-    docker:
-      web: Dockerfile
-    config:
-      MIX_ENV=prod
-      DATABASE_URL=$DATABASE_URL
+build:
+  docker:
+    web: Dockerfile
+  config:
+    MIX_ENV=prod
+    DATABASE_URL=$DATABASE_URL
