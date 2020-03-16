@@ -25,7 +25,13 @@ defmodule AlertasEc do
     ]
 
     start_link = Supervisor.start_link(children, options)
-    Ecto.Migrator.run(Repo, "priv/repo/migrations", :up, all: true)
+
+    Ecto.Migrator.run(
+      AlertasEc.Repo,
+      "#{:code.priv_dir(:alertas_ec)}/repo/migrations",
+      :up,
+      all: true
+    )
 
     start_link
   end

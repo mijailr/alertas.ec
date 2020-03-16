@@ -13,6 +13,11 @@ defmodule AlertasEc.Server do
     json_decoder: Jason
   )
 
+  plug(Plug.Static,
+    at: "/",
+    from: {:alertas_ec, "priv/static"}
+  )
+
   plug(:match)
   plug(:dispatch)
 
@@ -27,6 +32,8 @@ defmodule AlertasEc.Server do
   )
 
   get "/" do
-    send_resp(conn, 200, "Hello")
+    conn
+    |> put_resp_content_type("text/html")
+    |> send_file(200, "priv/static/index.html")
   end
 end

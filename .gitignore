@@ -23,3 +23,5 @@ erl_crash.dump
 alertas_ec-*.tar
 
 .elixir_ls
+
+.DS_Store
