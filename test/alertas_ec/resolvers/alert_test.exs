@@ -14,10 +14,11 @@ defmodule AlertasEc.Resolvers.AlertTest do
       query = """
         {
           alerts{
-            id
             title
             description
-            date
+            type
+            status
+            severity
           }
         }
       """
@@ -30,6 +31,10 @@ defmodule AlertasEc.Resolvers.AlertTest do
       assert conn.state == :sent
       assert conn.status == 200
       assert conn.resp_body =~ alert.title
+      assert conn.resp_body =~ alert.description
+      assert conn.resp_body =~ alert.type
+      assert conn.resp_body =~ alert.status
+      assert conn.resp_body =~ alert.severity
     end
 
     test "find/1 return an alert" do
@@ -38,10 +43,11 @@ defmodule AlertasEc.Resolvers.AlertTest do
       query = """
         {
           alert(id: #{alert.id}){
-            id
             title
             description
-            date
+            type
+            status
+            severity
           }
         }
       """
@@ -54,6 +60,10 @@ defmodule AlertasEc.Resolvers.AlertTest do
       assert conn.state == :sent
       assert conn.status == 200
       assert conn.resp_body =~ alert.title
+      assert conn.resp_body =~ alert.description
+      assert conn.resp_body =~ alert.type
+      assert conn.resp_body =~ alert.status
+      assert conn.resp_body =~ alert.severity
     end
   end
 end

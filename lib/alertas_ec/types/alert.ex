@@ -12,6 +12,7 @@ defmodule AlertasEc.Types.Alert do
     field(:date, :naive_datetime)
     field(:type, :string)
     field(:status, :string)
+    field(:severity, :string)
     field(:updates, non_null(list_of(:update)))
   end
 end

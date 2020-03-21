@@ -15,6 +15,7 @@ defmodule AlertasEc.Models.Alert do
     field(:date, :naive_datetime)
     field(:type, :string)
     field(:status, :string)
+    field(:severity, :string)
     has_many(:updates, Update)
 
     timestamps()
@@ -38,7 +39,7 @@ defmodule AlertasEc.Models.Alert do
 
   def changeset(%Alert{} = alert, attrs) do
     alert
-    |> cast(attrs, [:title, :description, :date, :type, :status])
-    |> validate_required([:title, :description, :date, :type, :status])
+    |> cast(attrs, [:title, :description, :date, :type, :status, :severity])
+    |> validate_required([:title, :description, :date, :type, :status, :severity])
   end
 end
