@@ -37,24 +37,24 @@ defmodule AlertasEc.Resolvers.AlertTest do
       assert conn.resp_body =~ alert.severity
     end
 
-    test "find/1 return an alert" do
-      alert = insert(:alert)
-
-      query = """
-        {
-          alert(id: #{alert.id}){
-            title
-            description
-            type
-            status
-            severity
-          }
-        }
-      """
+    test "find/1 without an alert should return error" do
+      id = 1
 
       conn =
         :post
-        |> conn("/api", query)
+        |> conn("/api", alert_query(id))
+        |> Server.call(@opts)
+
+      assert conn.state == :sent
+      assert conn.resp_body =~ "Alert with id #{id} not found"
+    end
+
+    test "find/1 return an alert" do
+      alert = insert(:alert)
+
+      conn =
+        :post
+        |> conn("/api", alert_query(alert.id))
         |> Server.call(@opts)
 
       assert conn.state == :sent
@@ -65,5 +65,19 @@ defmodule AlertasEc.Resolvers.AlertTest do
       assert conn.resp_body =~ alert.status
       assert conn.resp_body =~ alert.severity
     end
+  end
+
+  def alert_query(id) do
+    """
+    {
+      alert(id: #{id}){
+        title
+        description
+        type
+        status
+        severity
+      }
+    }
+    """
   end
 end
