@@ -7,11 +7,7 @@ defmodule AlertasEc.Server do
   use Plug.Router
   use Plug.ErrorHandler
 
-  plug(Plug.Parsers,
-    parsers: [:urlencoded, :multipart, :json, Absinthe.Plug.Parser],
-    pass: ["*/*"],
-    json_decoder: Jason
-  )
+  plug(Corsica, origins: "*", allow_headers: :all)
 
   plug(Plug.Static,
     at: "/",
@@ -19,6 +15,13 @@ defmodule AlertasEc.Server do
   )
 
   plug(:match)
+
+  plug(Plug.Parsers,
+    parsers: [:urlencoded, :multipart, :json, Absinthe.Plug.Parser],
+    pass: ["*/*"],
+    json_decoder: Jason
+  )
+
   plug(:dispatch)
 
   forward("/api",
