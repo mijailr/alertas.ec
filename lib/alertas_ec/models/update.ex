@@ -38,6 +38,6 @@ defmodule AlertasEc.Models.Update do
   def changeset(%Update{} = update, attrs) do
     update
     |> cast(attrs, [:title, :content, :date, :source, :alert_id])
-    |> validate_required([:title, :content, :date, :source, :alert_id])
+    |> validate_required([:title, :content, :date, :alert_id])
   end
 end

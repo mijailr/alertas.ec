@@ -18,6 +18,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
             title
             content
             date
+            source
           }
         }
       """
@@ -31,6 +32,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
       assert conn.status == 200
       assert conn.resp_body =~ update.title
       assert conn.resp_body =~ update.content
+      assert conn.resp_body =~ update.source
     end
 
     test "find/1 return an update" do
@@ -43,6 +45,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
             title
             content
             date
+            source
           }
         }
       """
@@ -56,6 +59,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
       assert conn.status == 200
       assert conn.resp_body =~ update.title
       assert conn.resp_body =~ update.content
+      assert conn.resp_body =~ update.source
     end
   end
 end
