@@ -27,7 +27,7 @@ defmodule AlertasEc.MixProject do
 
   def aliases do
     [
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["credo", "ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 

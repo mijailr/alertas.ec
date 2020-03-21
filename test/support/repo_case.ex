@@ -1,4 +1,8 @@
 defmodule AlertasEc.RepoCase do
+  @moduledoc """
+  Repo Case for database sandbox
+  """
+
   use ExUnit.CaseTemplate
 
   using do

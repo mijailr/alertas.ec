@@ -1,4 +1,8 @@
 defmodule AlertasEc.Factory.Update do
+  @moduledoc """
+  Update factory for testing
+  """
+
   defmacro __using__(_) do
     quote do
       def update_factory do
