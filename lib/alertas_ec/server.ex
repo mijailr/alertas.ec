@@ -14,14 +14,13 @@ defmodule AlertasEc.Server do
     from: {:alertas_ec, "priv/static"}
   )
 
-  plug(:match)
-
   plug(Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json, Absinthe.Plug.Parser],
     pass: ["*/*"],
     json_decoder: Jason
   )
 
+  plug(:match)
   plug(:dispatch)
 
   forward("/api",
@@ -37,6 +36,6 @@ defmodule AlertasEc.Server do
   get "/" do
     conn
     |> put_resp_content_type("text/html")
-    |> send_file(200, "priv/static/index.html")
+    |> send_file(200, Path.join(:code.priv_dir(:alertas_ec), "static/index.html"))
   end
 end
