@@ -16,6 +16,11 @@ RUN apk update && \
 
 COPY . .
 
+RUN cd frontend && \
+  yarn install && \
+  yarn build && \
+  mv build/* ../priv/static
+
 RUN mix do deps.get, deps.compile, compile
 
 RUN \
