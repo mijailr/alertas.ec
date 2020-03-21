@@ -21,7 +21,7 @@ defmodule AlertasEc.MixProject do
   def application do
     [
       mod: {AlertasEc, []},
-      extra_applications: [:ecto, :logger, :plug_cowboy]
+      extra_applications: [:corsica, :ecto, :logger, :plug_cowboy]
     ]
   end
 
@@ -36,6 +36,7 @@ defmodule AlertasEc.MixProject do
       {:absinthe, "~> 1.4"},
       {:absinthe_ecto, "~> 0.1"},
       {:absinthe_plug, "~> 1.4"},
+      {:corsica, "~> 1.1"},
       {:ecto_sql, "~> 3.3"},
       {:jason, "~> 1.1"},
       {:plug_cowboy, "~> 2.1"},
