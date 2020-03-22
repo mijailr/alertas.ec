@@ -19,7 +19,7 @@ defmodule AlertasEc.Types.Alert do
     field :updates, list_of(:update) do
       resolve(
         assoc(:updates, fn updates_query, _args, _context ->
-          updates_query |> order_by(desc: :date)
+          updates_query |> order_by(asc: :date)
         end)
       )
     end
