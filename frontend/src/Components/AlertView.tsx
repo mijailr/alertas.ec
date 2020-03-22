@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UpdateView from './UpdateView'
 import { AlertType, UpdateType } from '../Service/types'
+import Moment from 'react-moment'
 
 interface AlertProps {
   alert: AlertType
@@ -16,28 +17,31 @@ class AlertView extends Component<AlertProps, AlertType> {
       date: this.props.alert.date,
       description: this.props.alert.description,
       status: this.props.alert.status,
-      updates: this.props.alert.updates
+      updates: this.props.alert.updates,
+      severity: this.props.alert.severity
     }
   }
   render() {
-    return(
+    return (
       <div className="Alert card">
-        <div className="card-divider normal">
+        <div className={`card-divider ${this.state.severity}`}>
           <h2>
             {this.state.title}
-            <small>{this.state.date}</small>
-              </h2>
+            <Moment className="date" format="DD/MM/YYYY">
+              {this.state.date}
+            </Moment>
+          </h2>
         </div>
         <div className="card-section">
           <p>
             {this.state.description}
           </p>
         </div>
-          <div className="Updates">
-            {this.state.updates.map((update: UpdateType) => (
-              <UpdateView update={update} />
-            ))}
-          </div>
+        <div className="Updates">
+          {this.state.updates.map((update: UpdateType) => (
+            <UpdateView update={update} />
+          ))}
+        </div>
       </div>
     );
   }
