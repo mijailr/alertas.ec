@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { UpdateType } from '../Service/types';
+import Moment from 'react-moment'
 
 interface UpdateProps {
   update: UpdateType
@@ -20,7 +21,9 @@ class UpdateView extends Component<UpdateProps, UpdateType> {
     return (
       <div className="Update" id={this.state.id}>
         {this.state.title}
-        <span>{this.state.date}</span>
+        <Moment className="date" format="DD/MM/YYYY">
+          {this.state.date}
+        </Moment>
       </div>
     )
   }
