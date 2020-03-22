@@ -9,17 +9,18 @@ export interface Alerts {
 export interface AlertType {
   id: string;
   title: string;
-  date: string;
+  date: Date;
   status: string;
   description: string;
-  updates: Array<UpdateType>
+  updates: Array<UpdateType>;
+  severity: string;
 }
 
 export interface UpdateType {
   id: string;
   title: string;
   content: string;
-  date: string;
+  date: Date;
 }
 
 export interface AlertVars {
