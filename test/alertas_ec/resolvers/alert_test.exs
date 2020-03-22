@@ -33,8 +33,8 @@ defmodule AlertasEc.Resolvers.AlertTest do
       assert conn.resp_body =~ alert.title
       assert conn.resp_body =~ alert.description
       assert conn.resp_body =~ alert.type
-      assert conn.resp_body =~ alert.status
-      assert conn.resp_body =~ alert.severity
+      assert conn.resp_body =~ Atom.to_string(alert.status)
+      assert conn.resp_body =~ Atom.to_string(alert.severity)
     end
 
     test "find/1 without an alert should return error" do
@@ -62,8 +62,8 @@ defmodule AlertasEc.Resolvers.AlertTest do
       assert conn.resp_body =~ alert.title
       assert conn.resp_body =~ alert.description
       assert conn.resp_body =~ alert.type
-      assert conn.resp_body =~ alert.status
-      assert conn.resp_body =~ alert.severity
+      assert conn.resp_body =~ Atom.to_string(alert.status)
+      assert conn.resp_body =~ Atom.to_string(alert.severity)
     end
   end
 

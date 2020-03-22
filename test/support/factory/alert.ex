@@ -10,9 +10,9 @@ defmodule AlertasEc.Factory.Alert do
           title: Faker.Lorem.sentence(),
           description: Faker.Lorem.sentence(),
           type: Faker.Lorem.word(),
-          status: Faker.Lorem.word(),
+          status: :active,
           date: Faker.DateTime.backward(1),
-          severity: Faker.Lorem.word()
+          severity: :normal
         }
       end
     end

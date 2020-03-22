@@ -15,8 +15,8 @@ defmodule AlertasEc.Models.Alert do
     field(:description, :string)
     field(:date, :naive_datetime)
     field(:type, :string)
-    field(:status, :string)
-    field(:severity, :string)
+    field(:status, StatusEnum)
+    field(:severity, SeverityEnum)
     has_many(:updates, Update)
 
     timestamps()
