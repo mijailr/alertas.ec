@@ -5,6 +5,7 @@ defmodule AlertasEc.Models.Alert do
 
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query, only: [from: 2]
 
   alias AlertasEc.Repo
   alias AlertasEc.Models.{Alert, Update}
@@ -22,7 +23,9 @@ defmodule AlertasEc.Models.Alert do
   end
 
   def list do
-    Alert
+    from(a in Alert,
+      order_by: [desc: :date]
+    )
     |> Repo.all()
   end
 
