@@ -8,11 +8,13 @@ const GetAlerts = gql`
       date
       status
       description
+      severity
       updates{
         id
         title
         content
         date
+        source
       }
     }
   }
