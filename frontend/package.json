@@ -15,10 +15,12 @@
     "apollo-boost": "^0.4.7",
     "foundation-sites": "^6.6.1",
     "graphql": "^14.6.0",
+    "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-foundation": "^0.9.6",
+    "react-moment": "^0.9.7",
     "react-scripts": "3.4.0",
     "typescript": "~3.7.2"
   },
