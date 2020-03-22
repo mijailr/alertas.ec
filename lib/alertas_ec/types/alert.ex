@@ -3,6 +3,8 @@ defmodule AlertasEc.Types.Alert do
   GraphQL schema for updates
   """
 
+  import Ecto.Query, only: [order_by: 2]
+  use Absinthe.Ecto, repo: AlertasEc.Repo
   use Absinthe.Schema.Notation
 
   object :alert do
@@ -13,6 +15,13 @@ defmodule AlertasEc.Types.Alert do
     field(:type, :string)
     field(:status, :string)
     field(:severity, :string)
-    field(:updates, non_null(list_of(:update)))
+
+    field :updates, list_of(:update) do
+      resolve(
+        assoc(:updates, fn updates_query, _args, _context ->
+          updates_query |> order_by(desc: :date)
+        end)
+      )
+    end
   end
 end
