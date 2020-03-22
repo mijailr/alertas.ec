@@ -37,6 +37,7 @@ defmodule AlertasEc.MixProject do
       {:absinthe_ecto, "~> 0.1"},
       {:absinthe_plug, "~> 1.4"},
       {:corsica, "~> 1.1"},
+      {:ecto_enum, "~> 1.4"},
       {:ecto_sql, "~> 3.3"},
       {:jason, "~> 1.1"},
       {:plug_cowboy, "~> 2.1"},
