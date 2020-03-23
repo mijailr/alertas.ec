@@ -10,12 +10,14 @@ defmodule AlertasEc.Models.Alert do
   alias AlertasEc.Repo
   alias AlertasEc.Models.{Alert, Update}
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
+
   schema("alerts") do
     field(:title, :string)
     field(:description, :string)
     field(:date, :naive_datetime)
     field(:type, :string)
-    field(:uuid, :binary)
     field(:status, StatusEnum)
     field(:severity, SeverityEnum)
     has_many(:updates, Update)

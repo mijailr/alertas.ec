@@ -3,6 +3,7 @@ defmodule AlertasEc.Resolvers.AlertTest do
   use AlertasEc.RepoCase
   use Plug.Test
   import AlertasEc.Factory
+  import Ecto
   alias AlertasEc.Server
 
   @opts Server.init([])
@@ -38,7 +39,7 @@ defmodule AlertasEc.Resolvers.AlertTest do
     end
 
     test "find/1 without an alert should return error" do
-      id = 1
+      id = Ecto.UUID.generate()
 
       conn =
         :post
@@ -70,7 +71,7 @@ defmodule AlertasEc.Resolvers.AlertTest do
   def alert_query(id) do
     """
     {
-      alert(id: #{id}){
+      alert(id: "#{id}"){
         title
         description
         type
