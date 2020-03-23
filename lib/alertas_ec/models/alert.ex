@@ -15,6 +15,7 @@ defmodule AlertasEc.Models.Alert do
     field(:description, :string)
     field(:date, :naive_datetime)
     field(:type, :string)
+    field(:uuid, :binary)
     field(:status, StatusEnum)
     field(:severity, SeverityEnum)
     has_many(:updates, Update)

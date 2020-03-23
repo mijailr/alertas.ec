@@ -14,6 +14,7 @@ defmodule AlertasEc.Models.Update do
     field(:content, :string)
     field(:date, :naive_datetime)
     field(:source, :string)
+    field(:alert_uuid, :binary)
     belongs_to(:alert, Alert)
 
     timestamps()
