@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Moment from 'react-moment';
 import { UpdateType } from '../Service/types';
-import Moment from 'react-moment'
 
 interface UpdateProps {
   update: UpdateType

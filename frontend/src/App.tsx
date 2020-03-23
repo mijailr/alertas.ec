@@ -1,22 +1,15 @@
+import { ApolloProvider } from '@apollo/react-hooks';
 import React, { Component } from 'react';
-import { Grid } from 'react-foundation'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  RouteComponentProps
-} from "react-router-dom";
-import Header from './Components/Header'
+import { BrowserRouter as Router, Route, RouteComponentProps, Switch } from "react-router-dom";
 import './App.scss';
-import { ApolloProvider } from '@apollo/react-hooks'
-import Client from './Service/Client'
-import AlertList from './Components/AlertList'
-
+import AlertList from './Components/AlertList';
 import AlertShow from './Components/AlertShow';
+import Header from './Components/Header';
+import Client from './Service/Client';
 import { AlertSingle } from './Service/types';
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={Client}>
@@ -36,5 +29,3 @@ class App extends Component {
   }
 
 }
-
-export default App;

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { AlertSingle } from '../Service/types';
 import { useQuery } from '@apollo/react-hooks';
-import { GetAlert } from '../Service/query';
+import React, { Component } from 'react';
 import { Column, Grid } from 'react-foundation';
-import AlertView from './AlertView';
 import { RouteComponentProps } from 'react-router-dom';
+import { GetAlert } from '../Service/query';
+import { AlertSingle } from '../Service/types';
+import AlertView from './AlertView';
 
 interface ComponentProps extends RouteComponentProps<AlertSingle> {
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import UpdateView from './UpdateView'
-import { AlertType, UpdateType } from '../Service/types'
 import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
+import { AlertType, UpdateType } from '../Service/types'
+import UpdateView from './UpdateView'
 
 interface AlertProps {
   alert: AlertType
