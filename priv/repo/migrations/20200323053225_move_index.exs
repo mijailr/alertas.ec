@@ -29,7 +29,7 @@ defmodule AlertasEc.Repo.Migrations.MoveIndex do
   end
 
   defp reindex_updates do
-    AlertasEc.Models.Alert
+    Alert
     |> Repo.all()
     |> Enum.each(&add_uuid/1)
   end
