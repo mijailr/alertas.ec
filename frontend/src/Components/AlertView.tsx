@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UpdateView from './UpdateView'
 import { AlertType, UpdateType } from '../Service/types'
 import Moment from 'react-moment'
+import { Link } from 'react-router-dom'
 
 interface AlertProps {
   alert: AlertType
@@ -25,12 +26,14 @@ class AlertView extends Component<AlertProps, AlertType> {
     return (
       <div className="Alert card">
         <div className={`card-divider ${this.state.severity}`}>
-          <h2>
-            {this.state.title}
-            <Moment className="date" format="DD/MM/YYYY">
-              {this.state.date}
-            </Moment>
-          </h2>
+          <Link to={`alert/${this.state.id}`}>
+            <h2>
+              {this.state.title}
+              <Moment className="date" format="DD/MM/YYYY">
+                {this.state.date}
+              </Moment>
+            </h2>
+          </Link>
         </div>
         <div className="card-section">
           <p>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Alerts, AlertType } from '../Service/types';
-import GetAlerts from '../Service/query';
+import { GetAlerts } from '../Service/query';
 import { useQuery } from '@apollo/react-hooks';
 import AlertView from './AlertView'
-import { Column } from 'react-foundation';
+import { Column, Grid } from 'react-foundation';
 
 
 const AlertsView = () => {
@@ -12,17 +12,19 @@ const AlertsView = () => {
     if (error !== undefined) return <p>Error!</p>
 
     return (
-        <Column large={12} small={12}>
-            {data.alerts.map((alert: AlertType) => (
-                <AlertView alert={alert} />
-            ))}
-        </Column>
+        <Grid>
+            <Column large={12} small={12}>
+                {data.alerts.map((alert: AlertType) => (
+                    <AlertView alert={alert} />
+                ))}
+            </Column>
+        </Grid>
     )
 }
 
 export default class AlertList extends Component<{}, Alerts> {
     render() {
-        
+
         return (
             <AlertsView />
         )
