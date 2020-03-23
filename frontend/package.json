@@ -12,6 +12,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-foundation": "^0.9.6",
+    "@types/react-router-dom": "^5.1.3",
     "apollo-boost": "^0.4.7",
     "foundation-sites": "^6.6.1",
     "graphql": "^14.6.0",
@@ -21,6 +22,7 @@
     "react-dom": "^16.13.0",
     "react-foundation": "^0.9.6",
     "react-moment": "^0.9.7",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "typescript": "~3.7.2"
   },
