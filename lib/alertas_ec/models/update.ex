@@ -3,14 +3,11 @@ defmodule AlertasEc.Models.Update do
   This represent an alert update
   """
 
-  use Ecto.Schema
+  use AlertasEc.Models
   import Ecto.Changeset
 
   alias AlertasEc.Repo
   alias AlertasEc.Models.{Alert, Update}
-
-  @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type :binary_id
 
   schema("updates") do
     field(:title, :string)

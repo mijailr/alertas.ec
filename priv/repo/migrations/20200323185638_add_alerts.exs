@@ -1,15 +1,19 @@
-defmodule AlertasEc.Repo.Migrations.UseEnums do
+defmodule AlertasEc.Repo.Migrations.AddAlerts do
   use Ecto.Migration
 
   def change do
     StatusEnum.create_type()
     SeverityEnum.create_type()
-
-    alter table(:alerts) do
-      remove(:status)
-      remove(:severity)
+    
+    create table(:alerts) do
+      add(:title, :string)
+      add(:description, :string)
+      add(:date, :naive_datetime)
+      add(:type, :string)
       add(:status, StatusEnum.type(), default: "active")
       add(:severity, SeverityEnum.type(), default: "normal")
+
+      timestamps()
     end
   end
 end

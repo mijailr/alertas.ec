@@ -3,15 +3,12 @@ defmodule AlertasEc.Models.Alert do
   Alert model
   """
 
-  use Ecto.Schema
+  use AlertasEc.Models
   import Ecto.Changeset
   import Ecto.Query, only: [from: 2]
 
   alias AlertasEc.Repo
   alias AlertasEc.Models.{Alert, Update}
-
-  @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type :binary_id
 
   schema("alerts") do
     field(:title, :string)
