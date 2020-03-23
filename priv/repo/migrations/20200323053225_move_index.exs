@@ -1,7 +1,5 @@
 defmodule AlertasEc.Repo.Migrations.MoveIndex do
   use Ecto.Migration
-  import Ecto.Query, only: [from: 2]
-
   alias AlertasEc.Repo
 
   def change do
