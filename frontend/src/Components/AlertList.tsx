@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Alerts, AlertType } from '../Service/types';
-import { GetAlerts } from '../Service/query';
 import { useQuery } from '@apollo/react-hooks';
-import AlertView from './AlertView'
+import React, { Component } from 'react';
 import { Column, Grid } from 'react-foundation';
+import { GetAlerts } from '../Service/query';
+import { Alerts, AlertType } from '../Service/types';
+import AlertView from './AlertView';
 
 
 const AlertsView = () => {
