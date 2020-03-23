@@ -6,6 +6,10 @@ export interface Alerts {
   alerts: Array<AlertType>;
 }
 
+export interface AlertSingle {
+  id: string;
+}
+
 export interface AlertType {
   id: string;
   title: string;
