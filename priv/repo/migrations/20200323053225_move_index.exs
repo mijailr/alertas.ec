@@ -3,7 +3,6 @@ defmodule AlertasEc.Repo.Migrations.MoveIndex do
   import Ecto.Query, only: [from: 2]
 
   alias AlertasEc.Repo
-  alias AlertasEc.Models.{Update, Alert}
 
   def change do
     reindex_updates()
@@ -38,5 +37,37 @@ defmodule AlertasEc.Repo.Migrations.MoveIndex do
   defp add_uuid(alert) do
     from(u in Update, where: u.alert_id == ^alert.id)
     |> Repo.update_all(set: [alert_uuid: alert.uuid])
+  end
+end
+
+defmodule Update do
+  use Ecto.Schema
+
+  schema("alerts") do
+    field(:title, :string)
+    field(:content, :string)
+    field(:date, :naive_datetime)
+    field(:source, :string)
+    field(:alert_uuid, :binary)
+    belongs_to(:alert, Alert)
+
+    timestamps()
+  end
+end
+
+defmodule Alert do
+  use Ecto.Schema
+
+  schema("alerts") do
+    field(:title, :string)
+    field(:description, :string)
+    field(:date, :naive_datetime)
+    field(:type, :string)
+    field(:uuid, :binary)
+    field(:status, StatusEnum)
+    field(:severity, SeverityEnum)
+    has_many(:updates, Update)
+
+    timestamps()
   end
 end

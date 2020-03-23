@@ -4,6 +4,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
   use Plug.Test
   import AlertasEc.Factory
   alias AlertasEc.Server
+  import Ecto
 
   @opts Server.init([])
 
@@ -36,7 +37,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
     end
 
     test "find/1 should return an error when update id doesn't exist" do
-      id = 1
+      id = Ecto.UUID.generate()
 
       conn =
         :post
@@ -65,7 +66,7 @@ defmodule AlertasEc.Resolvers.UpdateTest do
     def update_query(id) do
       """
         {
-          update(id: #{id}){
+          update(id: "#{id}"){
             id
             title
             content
