@@ -33,7 +33,7 @@ defmodule AlertasEc.Server do
     init_opts: [schema: AlertasEc.Schema]
   )
 
-  get "/" do
+  get _ do
     conn
     |> put_resp_content_type("text/html")
     |> send_file(200, Path.join(:code.priv_dir(:alertas_ec), "static/index.html"))

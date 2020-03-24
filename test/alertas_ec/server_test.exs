@@ -15,4 +15,15 @@ defmodule AlertasEc.ServerTest do
     assert conn.status == 200
     assert conn.resp_body =~ "INDEX_PLACEHOLDER"
   end
+
+  test "Alerts Path" do
+    conn =
+      :get
+      |> conn("/alerts/random-id")
+      |> Server.call(@opts)
+
+    assert conn.state == :file
+    assert conn.status == 200
+    assert conn.resp_body =~ "INDEX_PLACEHOLDER"
+  end
 end
