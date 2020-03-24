@@ -10,6 +10,10 @@ export interface AlertSingle {
   id: string;
 }
 
+export interface SeverityType {
+  severity: string;
+}
+
 export interface AlertType {
   id: string;
   title: string;
@@ -18,6 +22,7 @@ export interface AlertType {
   description: string;
   updates: Array<UpdateType>;
   severity: string;
+  type: string;
 }
 
 export interface UpdateType {

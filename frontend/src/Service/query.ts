@@ -9,6 +9,7 @@ export const GetAlerts = gql`
       status
       description
       severity
+      type
       updates{
         id
         title
@@ -29,6 +30,7 @@ export const GetAlert = gql`
       status
       description
       severity
+      type
       updates{
         id
         title
