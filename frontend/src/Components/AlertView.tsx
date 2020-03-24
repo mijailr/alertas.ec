@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Moment from 'react-moment'
-import { Link } from 'react-router-dom'
 import { AlertType } from '../Service/types'
 import SeverityIcon from './SeverityIcon'
 
@@ -32,12 +31,9 @@ class AlertView extends Component<AlertProps, AlertType> {
           </div>
         </div>
         <div className="media-object-section main-section">
-          <Link to={`/alert/${this.state.id}`}>
-            <h2>
-              {this.state.title}
-
-            </h2>
-          </Link>
+          <h2>
+            {this.state.title}
+          </h2>
           <p>
             {this.state.description}
           </p>
