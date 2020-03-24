@@ -32,7 +32,7 @@ class AlertView extends Component<AlertProps, AlertType> {
           </div>
         </div>
         <div className="media-object-section main-section">
-          <Link to={`alert/${this.state.id}`}>
+          <Link to={`/alert/${this.state.id}`}>
             <h2>
               {this.state.title}
 
