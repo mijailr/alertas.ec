@@ -30,5 +30,3 @@ export default class AlertList extends Component<{}, Alerts> {
         )
     }
 }
-
-

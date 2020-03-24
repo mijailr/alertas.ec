@@ -1,4 +1,6 @@
 import { ApolloProvider } from '@apollo/react-hooks';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faExclamationCircle, faRadiation, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, RouteComponentProps, Switch } from "react-router-dom";
 import './App.scss';
@@ -7,8 +9,6 @@ import AlertShow from './Components/AlertShow';
 import Header from './Components/Header';
 import Client from './Service/Client';
 import { AlertSingle } from './Service/types';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSkullCrossbones, faRadiation, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faSkullCrossbones, faRadiation, faExclamationCircle);
 
