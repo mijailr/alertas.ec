@@ -3,6 +3,8 @@ import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
 import { AlertType, UpdateType } from '../Service/types'
 import UpdateView from './UpdateView'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SeverityIcon from './SeverityIcon'
 
 interface AlertProps {
   alert: AlertType
@@ -19,31 +21,34 @@ class AlertView extends Component<AlertProps, AlertType> {
       description: this.props.alert.description,
       status: this.props.alert.status,
       updates: this.props.alert.updates,
-      severity: this.props.alert.severity
+      severity: this.props.alert.severity,
+      type: this.props.alert.type
     }
   }
   render() {
     return (
-      <div className="Alert card">
-        <div className={`card-divider ${this.state.severity}`}>
+      <div className={`Alert media-object ${this.state.severity}`}>
+        <div className="media-object-section align-self-middle">
+          <div className={`thumbnail ${this.state.severity}`}>
+            <SeverityIcon severity={this.state.severity} />
+          </div>
+        </div>
+        <div className="media-object-section">
           <Link to={`alert/${this.state.id}`}>
             <h2>
               {this.state.title}
-              <Moment className="date" format="DD/MM/YYYY">
-                {this.state.date}
-              </Moment>
+
             </h2>
           </Link>
-        </div>
-        <div className="card-section">
           <p>
             {this.state.description}
           </p>
-        </div>
-        <div className="Updates">
-          {this.state.updates.map((update: UpdateType) => (
-            <UpdateView update={update} />
-          ))}
+          <span className="label">
+            {this.state.type}
+          </span>
+          <Moment className="date" format="DD/MM/YYYY">
+            {this.state.date}
+          </Moment>
         </div>
       </div>
     );

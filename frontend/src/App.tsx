@@ -7,7 +7,10 @@ import AlertShow from './Components/AlertShow';
 import Header from './Components/Header';
 import Client from './Service/Client';
 import { AlertSingle } from './Service/types';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSkullCrossbones, faRadiation, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 
+library.add(faSkullCrossbones, faRadiation, faExclamationCircle);
 
 export default class App extends Component {
   render() {
@@ -27,5 +30,4 @@ export default class App extends Component {
       </ApolloProvider>
     );
   }
-
 }
