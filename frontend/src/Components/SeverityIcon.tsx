@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { SeverityType } from '../Service/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { Component } from 'react';
+import { SeverityType } from '../Service/types';
 
 class SeverityIcon extends Component<SeverityType, SeverityType> {
 
@@ -13,13 +13,13 @@ class SeverityIcon extends Component<SeverityType, SeverityType> {
     }
 
     render() {
-        if (this.state.severity == "high") {
+        if (this.state.severity === "high") {
             return <FontAwesomeIcon icon="skull-crossbones" />
         }
-        if (this.state.severity == "medium") {
+        if (this.state.severity === "medium") {
             return <FontAwesomeIcon icon="radiation" />
         }
-        if (this.state.severity == "normal") {
+        if (this.state.severity === "normal") {
             return <FontAwesomeIcon icon="exclamation-circle" />
         }
     }

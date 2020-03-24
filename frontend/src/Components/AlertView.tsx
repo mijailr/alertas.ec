@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
-import { AlertType, UpdateType } from '../Service/types'
-import UpdateView from './UpdateView'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { AlertType } from '../Service/types'
 import SeverityIcon from './SeverityIcon'
 
 interface AlertProps {

@@ -1,29 +1,57 @@
+body{
+  background-color: #f9f8f8;
+}
 .Alert{
-  .date{
-    font-size: 0.6rem;
-    display: block;
+  background-color: #FFF;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgb(155, 155, 155);
+  &.normal{
+    border-top: 0.3rem solid  #039be5;
   }
-  .card-divider {
-    background-color: #FFF;
-    &.normal{
-      border-top: 1rem solid  #22bb5b;
+  &.medium{
+    border-top: 0.3rem solid  #FFA837;
+  }
+  &.high{
+    border-top: 0.3rem solid  #ff5252;
+  }
+  
+  .media-object-section {
+    .label{
+      background-color: #616161;
     }
-    &.medium{
-      border-top: 1rem solid  #FFA837;
-    }
-    &.high{
-      border-top: 1rem solid  #FF3737;
-    }
-    h2{
-      color: #999;
-      font-weight: bold;
-      font-size: 1.3rem;
-      .date{
-        color: #000;
-        font-weight: normal;
-        padding-top: .6rem;
-        font-size: .7rem;
+    .thumbnail{
+      &.normal{
+        color: #039be5;
       }
+      &.medium{
+        color: #FFA837;
+      }
+      &.high{
+        color: #ff5252;
+      }
+    }
+    
+    .thumbnail{
+      border: none;
+      font-size: 2rem;
+      box-shadow: none;
+      height: 100%;
+      vertical-align: middle;
+      color: #dc7979;
+    }
+    
+    h2{
+      color: #3f3e44;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .date{
+      color: #000;
+      font-style: italic;
+      font-weight: normal;
+      font-size: .8rem;
+      float: right;
     }
   }
   .Update {
