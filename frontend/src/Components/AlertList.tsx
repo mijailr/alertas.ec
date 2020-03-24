@@ -15,7 +15,7 @@ const AlertsView = () => {
         <Grid>
             <Column large={12} small={12}>
                 {data.alerts.map((alert: AlertType) => (
-                    <AlertView alert={alert} />
+                    <AlertView key={alert.id} alert={alert} />
                 ))}
             </Column>
         </Grid>
