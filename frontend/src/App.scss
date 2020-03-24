@@ -1,6 +1,14 @@
 body{
   background-color: #f9f8f8;
 }
+a{
+  &.alert-link{
+    color: #000000;
+    &:hover{
+      color: #000000;
+    }
+  }
+}
 .Alert{
   background-color: #FFF;
   padding: 0.8rem;
