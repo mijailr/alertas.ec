@@ -1,46 +1,59 @@
-body{
-  background-color: #f9f8f8;
+body {
+  background-color: #f7f8fb;
 }
-a{
-  &.alert-link{
-    color: #000000;
-    &:hover{
-      color: #000000;
+a {
+  &.alert-link {
+    color: rgb(98, 115, 141);
+    &:hover {
+      color: rgb(98, 115, 141);
     }
   }
 }
-.Alert{
-  background-color: #FFF;
+.Alert {
+  background-color: #fff;
   padding: 0.8rem;
-  font-size: 0.8rem;
-  border-bottom: 1px solid rgb(155, 155, 155);
-  &.normal{
-    border-top: 0.3rem solid  #039be5;
+  font-size: 0.9rem;
+  border-radius: 0 0 4px 4px;
+
+  box-shadow: 2px 3px 8px 1px rgba(89, 105, 129, 0.1);
+
+  &.normal,
+  &.medium,
+  &.high {
+    border-top: 0.5rem;
+    border-style: solid;
   }
-  &.medium{
-    border-top: 0.3rem solid  #FFA837;
+  &.normal {
+    border-image: linear-gradient(to right, rgb(47, 77, 158), rgb(66, 162, 206)) 100% 1 0;
   }
-  &.high{
-    border-top: 0.3rem solid  #ff5252;
+  &.medium {
+    border-image: linear-gradient(to right, #ffa837, rgb(228, 201, 82)) 100% 1 0;
   }
-  
+  &.high {
+    border-image: linear-gradient(to right, rgb(204, 52, 52), rgb(231, 189, 189)) 100% 1 0;
+  }
+
   .media-object-section {
-    .label{
-      background-color: #616161;
+    .label {
+      background-color: #62738d;
+      border-radius: 4px;
+      color: #ffffff;
+      font-weight: 600;
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     }
-    .thumbnail{
-      &.normal{
+    .thumbnail {
+      &.normal {
         color: #039be5;
       }
-      &.medium{
-        color: #FFA837;
+      &.medium {
+        color: #ffa837;
       }
-      &.high{
+      &.high {
         color: #ff5252;
       }
     }
-    
-    .thumbnail{
+
+    .thumbnail {
       border: none;
       font-size: 2rem;
       box-shadow: none;
@@ -48,24 +61,24 @@ a{
       vertical-align: middle;
       color: #dc7979;
     }
-    
-    h2{
+
+    h2 {
       color: #3f3e44;
       font-weight: bold;
       font-size: 1.2rem;
     }
-    .date{
+    .date {
       color: #000;
       font-style: italic;
       font-weight: normal;
-      font-size: .8rem;
+      font-size: 0.8rem;
       float: right;
     }
   }
   .Update {
     border-top: 1px solid #999;
-    font-size: .9rem;
+    font-size: 0.9rem;
     padding: 10px;
-    background-color: #f1f1f1; 
+    background-color: #f1f1f1;
   }
 }
