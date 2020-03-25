@@ -32,7 +32,11 @@ class AlertView extends Component<AlertProps, AlertType> {
         </div>
         <div className="media-object-section main-section">
           <h2>
+            <Moment className="date" format="DD/MM/YYYY">
+              {this.state.date}
+            </Moment>
             {this.state.title}
+
           </h2>
           <p>
             {this.state.description}
@@ -40,9 +44,6 @@ class AlertView extends Component<AlertProps, AlertType> {
           <span className="label">
             {this.state.type}
           </span>
-          <Moment className="date" format="DD/MM/YYYY">
-            {this.state.date}
-          </Moment>
         </div>
       </div>
     );
