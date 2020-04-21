@@ -44,7 +44,7 @@ defmodule AlertasEc.MixProject do
       {:postgrex, "~> 0.15"},
 
       # Test dependencies
-      {:credo, "~> 1.3.2", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.4.0", only: [:dev, :test], runtime: false},
       {:ex_machina, "~> 2.3", only: :test},
       {:excoveralls, "~> 0.12", only: [:dev, :test]},
       {:faker, "~> 0.13", only: :test},
