@@ -20,7 +20,7 @@
     "foundation-sites": "^6.6.3",
     "graphql": "^14.6.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-foundation": "^0.9.6",
