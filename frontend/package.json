@@ -19,7 +19,7 @@
     "apollo-boost": "^0.4.7",
     "foundation-sites": "^6.6.3",
     "graphql": "^14.6.0",
-    "moment": "^2.25.1",
+    "moment": "^2.25.3",
     "node-sass": "^4.14.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
