@@ -27,7 +27,7 @@
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "typescript": "~3.9.2"
+    "typescript": "~3.9.3"
   },
   "scripts": {
     "start": "react-scripts start --port 9988",
