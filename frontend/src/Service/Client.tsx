@@ -1,7 +1,8 @@
-import ApolloClient from 'apollo-boost'
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 
 const Client = new ApolloClient({
-  uri: "https://alertas.ec/api"
+  link: createHttpLink({uri: "https://alertas.ec/api"}),
+  cache: new InMemoryCache(),
 });
 
 export default Client;
