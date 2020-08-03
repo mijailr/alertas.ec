@@ -52,6 +52,6 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^3.7.1",
-    "eslint-plugin-react-hooks": "^4.0.7"
+    "eslint-plugin-react-hooks": "^4.0.8"
   }
 }
