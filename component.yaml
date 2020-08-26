@@ -6,6 +6,8 @@ metadata:
   techdocs:
     storageUrl: http://localhost:7000/techdocs/static/docs
   docs: https://localhost:8000
+  annotations:
+    github.com/project-slug: 'mijailr/alertas_ec'
 spec:
   type: service
   lifecycle: experimental
