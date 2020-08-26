@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: alertas_ec
+  description: Alertas
+  techdocs:
+    storageUrl: http://localhost:7000/techdocs/static/docs
+  docs: https://localhost:8000
+spec:
+  type: service
+  lifecycle: experimental
+  owner: mijail@hey.com
