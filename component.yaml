@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: Alertas EC
+  name: alertas_ec
   description: Sample service documentation repository
   annotations:
     github.com/project-slug: mijailr/alertas_ec
