@@ -4,7 +4,6 @@ repo_url: https://github.com/mijailr/alertas_ec
 
 nav:
   - Home: index.md
-  - SubDocs: '!include ./sub-docs/mkdocs.yml'
 
 plugins:
   - techdocs-core
