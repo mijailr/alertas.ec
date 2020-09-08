@@ -5,8 +5,8 @@ metadata:
   description: Alertas
   annotations:
     github.com/project-slug: 'mijailr/alertas_ec'
-    backstage.io/techdocs-ref: dir:./
+    backstage.io/techdocs-ref: dir:./docs
 spec:
-  type: documentation
+  type: docs
   lifecycle: experimental
   owner: mijail@hey.com
