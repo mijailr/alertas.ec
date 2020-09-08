@@ -9,7 +9,7 @@ nav:
     - Authentication: apis/authentication.md
     - Errors: apis/errors.md
     - Logger: apis/logger.md
-   - Documentation:
+  - Documentation:
     - Common Commands: common/commands.md
     - Squads: common/squads.md
     - Products:

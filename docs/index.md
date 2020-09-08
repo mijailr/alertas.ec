@@ -1,4 +1,4 @@
 # Index
 
 
-This is a sample documentation
+This is the index page sample documentation.
