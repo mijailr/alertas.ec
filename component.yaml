@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: alertas_ec
-  description: Alertas
+  name: Alertas EC
+  description: Sample service documentation repository
   annotations:
-    github.com/project-slug: 'mijailr/alertas_ec'
+    github.com/project-slug: mijailr/alertas_ec
     backstage.io/techdocs-ref: github:https://github.com/mijailr/alertas.ec.git
 spec:
   type: service
-  lifecycle: experimental
-  owner: Guest
+  lifecycle: production
+  owner: guest
