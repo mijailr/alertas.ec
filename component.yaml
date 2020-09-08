@@ -7,6 +7,6 @@ metadata:
     github.com/project-slug: 'mijailr/alertas_ec'
     backstage.io/techdocs-ref: dir:./
 spec:
-  type: service
+  type: documentation
   lifecycle: experimental
   owner: mijail@hey.com
