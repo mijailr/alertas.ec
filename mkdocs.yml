@@ -1,9 +1,19 @@
-site_name: 'mock-docs'
-site_description: 'mock-docs site description'
+site_name: 'Alertas EC'
+site_description: 'Alert notification system of Ecuador'
 repo_url: https://github.com/mijailr/alertas_ec
 
 nav:
   - Home: index.md
+  - APIs:
+    - Introduction: apis/introduction.md
+    - Authentication: apis/authentication.md
+    - Errors: apis/errors.md
+    - Logger: apis/logger.md
+   - Documentation:
+    - Common Commands: common/commands.md
+    - Squads: common/squads.md
+    - Products:
+      - Product One: product/product_one.md
 
 plugins:
   - techdocs-core
