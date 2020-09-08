@@ -1,6 +1,6 @@
 site_name: 'Alertas EC'
 site_description: 'Alert notification system of Ecuador'
-repo_url: https://github.com/mijailr/alertas_ec
+repo_url: https://github.com/mijailr/alertas.ec
 
 nav:
   - Home: index.md
