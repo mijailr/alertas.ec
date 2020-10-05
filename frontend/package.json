@@ -24,7 +24,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-foundation": "^0.9.6",
-    "react-moment": "^0.9.7",
+    "react-moment": "^1.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "typescript": "~4.0.3"
