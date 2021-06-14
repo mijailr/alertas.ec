@@ -15,7 +15,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-foundation": "^0.9.6",
-    "@types/react-router-dom": "^5.1.5",
+    "@types/react-router-dom": "^5.1.7",
     "apollo-boost": "^0.4.9",
     "foundation-sites": "^6.6.3",
     "graphql": "^15.3.0",
